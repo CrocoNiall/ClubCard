@@ -10,7 +10,7 @@ function getAll(request, response) {
 }
 
 
-// POST CREATE
+// POST CREATE USER
 function createUser(request, response) {
   console.log('in POST');
   console.log('body:',request.body);
@@ -34,7 +34,7 @@ function getUser(request, response) {
   }).select('-__v');
 }
 
-
+//DELETE USER
 function removeUser(request, response) {
   var id = request.params.id;
 
@@ -44,6 +44,7 @@ function removeUser(request, response) {
     response.json({message: 'user successfully deleted'});
   }).select('-__v');
 }
+
 
 module.exports = {
   getAll: getAll,

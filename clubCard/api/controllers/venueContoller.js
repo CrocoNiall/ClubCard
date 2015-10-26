@@ -1,6 +1,6 @@
 var Venue = require('../models/Venue.js');
 
-// GET
+// GET ALL VENUES
 function getAll(request, response) {
   Venue.find(function(error, venues) {
     if(error) response.json({message: 'Could not find any venues'});
@@ -10,7 +10,7 @@ function getAll(request, response) {
 }
 
 
-// POST CREATE
+// POST CREATE VENUE 
 function createVenue(request, response) {
   console.log('in POST');
   console.log('body:',request.body);
@@ -23,7 +23,7 @@ function createVenue(request, response) {
   });
 }
 
-//GET DELETE
+//GET VENUE
 function getVenue(request, response) {
   var id = request.params.id;
 
@@ -35,6 +35,7 @@ function getVenue(request, response) {
 }
 
 
+// DELETE USER
 function removeVenue(request, response) {
   var id = request.params.id;
 
@@ -44,6 +45,9 @@ function removeVenue(request, response) {
     response.json({message: 'venue successfully deleted'});
   }).select('-__v');
 }
+
+
+
 
 module.exports = {
   getAll: getAll,

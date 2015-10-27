@@ -26,9 +26,11 @@ router.route('/users/:id')
   .delete(userController.removeUser)
 
 //STATIC ROUTES
+//ammend credit to user, log activity in use and venue activity
 router.route('/venues/:venue_id/users/:user_id')
   .post(staticController.addCredit)
 
+//queries user and venue to establish if user is eligable to claim offer
 router.route('/query_credit/venues/:venue_id/users/:user_id')
   .post(staticController.checkPoints)
 

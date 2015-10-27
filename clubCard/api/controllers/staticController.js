@@ -7,7 +7,7 @@ function addCredit(request, response) {
 
   User.findById({_id: userId}, function(error, user) {
     if(error) response.json({message: 'Could not find user b/c:' + error});
-    var currentVenue = {}
+
     Venue.findById({_id: venueId}, function(error, venue) {
       if(error) response.json({message: 'Could not find venue b/c:' + error});
 
@@ -24,8 +24,22 @@ function addCredit(request, response) {
         dateTime: Number(new Date())
       }
 
+
+
+      if (request.body.action == 'credit'){
+      var newCredit = parseInt(user.credit) + parseInt(request.body.credit)
+      user.credit = newCredit
+
+      } else if (request.body.action == 'charge'){
+      var newCredit = parseInt(user.credit) - parseInt(request.body.credit)
+      user.credit = newCredit
+
+      } else {
+        
+      }
+
+
       user.activity.push(userActivityObj)
-      user.credit = user.credit + request.body.credit
       venue.activity.push(venueActivityObj)
 
       user.save(function(error) {
@@ -34,15 +48,11 @@ function addCredit(request, response) {
       });
 
       venue.save(function(error) {
-      if(error) response.json({messsage: 'Could not venue user b/c:' + error});  
+      if(error) response.json({messsage: 'Could not update venue b/c:' + error});  
 
       });
 
-
-      response.json({message: 'records successfully updated'});
-
-
-
+      response.json({ message: 'records successfully updated' });
 
         }).select('-__v');
       }).select('-__v');

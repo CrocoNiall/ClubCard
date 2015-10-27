@@ -26,7 +26,7 @@ router.route('/users/:id')
   .delete(userController.removeUser)
 
 //STATIC ROUTES
-router.route('/venues/:venue_id/users/:user_id')
+router.route('/venues/:venueName/users/:user_id')
   .post(staticController.addCredit)
 
 module.exports = router

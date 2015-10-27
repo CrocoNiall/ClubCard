@@ -18,34 +18,34 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var Venue = require('./models/Venue.js');
 var User = require('./models/User.js');
 
-var venue1 = new Venue({
-  name: 'POWERHOUSE',
-  openeingHours: {mon: '11pm - 3pm', tues: '11pm - 3pm', wed: 'CLOSED', thurs: '11pm - 3pm', fri: '11pm - 3pm', sat: '11pm - 6pm', sun: '11pm - 3pm'},
-  offer: {offerDesc: 'BOGOF', cost: 10},
+// var venue1 = new Venue({
+//   name: 'POWERHOUSE',
+//   openeingHours: {mon: '11pm - 3pm', tues: '11pm - 3pm', wed: 'CLOSED', thurs: '11pm - 3pm', fri: '11pm - 3pm', sat: '11pm - 6pm', sun: '11pm - 3pm'},
+//   offer: {offerDesc: 'BOGOF', cost: 10},
 
-})
+// })
 
-venue1.save(function(err, venue) {
-  if (err) console.log(err)
-    console.log('venue1 Saved');
-})
+// venue1.save(function(err, venue) {
+//   if (err) console.log(err)
+//     console.log('venue1 Saved');
+// })
 
 
-var user1 = new User({
-  email: 'nj.wallace@outlook.com',
-  userName: 'CrocoNiall',
-  password: 'password',
-  firstName: 'Niall',
-  lastName: 'Wallace',
-  DOB: 01/04/1992,
+// var user1 = new User({
+//   email: 'nj.wallace@outlook.com',
+//   userName: 'CrocoNiall',
+//   password: 'password',
+//   firstName: 'Niall',
+//   lastName: 'Wallace',
+//   DOB: 01/04/1992,
   
 
-})
+// })
 
-user1.save(function(err, user) {
-  if (err) console.log(err)
-    console.log('user1 Saved');
-})
+// user1.save(function(err, user) {
+//   if (err) console.log(err)
+//     console.log('user1 Saved');
+// })
 
 
 

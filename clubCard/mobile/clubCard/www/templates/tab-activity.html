@@ -1,0 +1,34 @@
+<ion-view view-title="My Activity" ng-controller='ActivityController as activity'>
+  <ion-content class='page'>
+
+
+<div class='card profile'>
+  <div id='profileLeft'>
+  <h2>#{{activity.userDetails.userName}}</h2>
+  <p>{{activity.userDetails.firstName}} {{activity.userDetails.lastName}}</p>
+  </div>  
+
+  <div id='profileRight'>
+  <h2>Credit: {{activity.userDetails.credit}}</h2>
+  </div>
+
+</div>
+
+
+
+<div class='card'>
+  <div class="list">
+
+    <a ng-repeat='transaction in activity.userActivity' class="item item-icon-left">
+      <i class="icon ion-person-stalker"></i>
+      {{transaction.venue}}
+      <span class="badge badge-assertive">{{transaction.credit}}</span>
+    </a>
+
+  </div>
+</div>
+
+
+
+  </ion-content>
+</ion-view>

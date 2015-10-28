@@ -1,0 +1,24 @@
+<ion-view view-title="login" ng-controller='HomeController as home'>
+  <ion-content class="page" ng-init='home.checkCCCUser()'>
+  <div class='logoContainer'>
+    <img src="http://i.imgur.com/Ty7Farq.png">
+  </div>
+  
+  <h2>Please Login</h2>
+  <label class="item item-input">
+    <span class="input-label">Username</span>
+    <input type="text" ng-model='home.username'>
+  </label> 
+  <label class="item item-input">
+    <span class="input-label">Password</span>
+    <input type="password" ng-model='home.passworod'>
+  </label>
+
+  <button class="button button-assertive" on-touch='home.login()'>
+    Login
+  </button>
+
+</label>
+
+  </ion-content>
+</ion-view>

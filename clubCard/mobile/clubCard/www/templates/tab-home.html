@@ -1,0 +1,14 @@
+<ion-view slide-left-right view-title="Home" ng-controller='HomeController as home'>
+  <ion-content class="padding page" ng-init='home.checkCCCUser()'>
+  <h1>Hello, {{home.currentUser.userName}}</h1> 
+    <div id='qrContainer'>
+      <img id='userQrCode' src="https://api.qrserver.com/v1/create-qr-code/?data={{home.currentUser.userId}}&amp;size=100x100" />
+    </div>
+    <div class="card homeCard">
+      <div class="item item-text-wrap">
+      Show this sceen to collect points!
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -31,8 +31,8 @@ function addCredit(request, response) {
       user.credit = newCredit
 
       } else if (request.body.action == 'charge'){
-      var newCredit = parseInt(user.credit) - parseInt(request.body.credit)
-      user.credit = newCredit
+      var newCharge = parseInt(user.credit) - parseInt(request.body.credit)
+      user.credit = newCharge
 
       } else {
 

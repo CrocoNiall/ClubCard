@@ -1,0 +1,25 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+#outerContainer {
+  display: block;
+  width: 700px;
+  margin: 0 auto;
+}
+
+#captureContainer {
+text-align: center;
+}
+
+#captureIndicator{
+  padding: 10px;
+
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+#creditNotification{
+  display: none;
+}

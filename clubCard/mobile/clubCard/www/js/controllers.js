@@ -54,6 +54,12 @@ angular.module('ClubCard.controllers', [])
         console.log(self.userDetails)
       });
 
+  self.getClass = function(transaction){
+    return (transaction.action === 'charge') ? 'badge-assertive' : 'badge-calm'
+    // {{transaction.action}}=='credit' ? 'badge-assertive' : 'badge-calm' 
+
+  }
+
 
 
 

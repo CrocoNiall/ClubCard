@@ -1,1 +1,61 @@
 /* Empty. Add your own CSS if you like */
+.page{
+  background-color: black;
+  text-align: center;
+}
+
+.logoContainer {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.logoContainer img {
+  width: 50%;
+}
+
+.button{
+  margin-top: 10px;
+  width: 100%;
+}
+
+#qrContainer{
+  position: relative;
+  border-radius: 5px;
+  top: 20px;
+  padding: 10px;
+  width: 320px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.profile {
+  text-align: left;
+  padding: 10px;
+}
+
+#profileLeft {
+  display: inline-block;
+  width: 65%;
+}
+
+#profileRight {
+  display: inline-block;
+  width: 30%;
+}
+
+.homeCard {
+  margin-top: 50px;
+}
+
+#userQrCode {
+  width: 300px;
+}
+
+.page h1{
+  color: white;
+}
+
+.css-header{
+  background-color: #440f17;
+}

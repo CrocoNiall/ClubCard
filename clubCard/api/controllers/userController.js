@@ -34,6 +34,15 @@ function getUser(request, response) {
   }).select('-__v');
 }
 
+function getUserByUsername(request, response) {
+  var paramsUsername = request.params.username;
+
+  User.find({userName: paramsUsername}, function(error, user) {
+    if(error) response.json({message: 'Could not find user b/c:' + error});
+
+    response.json({user: user});
+  }).select('-__v');
+}
 //DELETE USER
 function removeUser(request, response) {
   var id = request.params.id;
@@ -50,6 +59,7 @@ module.exports = {
   getAll: getAll,
   createUser: createUser,
   getUser: getUser,
-  removeUser: removeUser
+  removeUser: removeUser,
+  getUserByUsername: getUserByUsername
 
 }

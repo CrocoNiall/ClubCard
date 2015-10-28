@@ -25,6 +25,9 @@ router.route('/users/:id')
   .get(userController.getUser)
   .delete(userController.removeUser)
 
+router.route('/users/login/:username')
+  .get(userController.getUserByUsername) 
+
 //STATIC ROUTES
 //ammend credit to user, log activity in use and venue activity
 router.route('/venues/:venue_id/users/:user_id')

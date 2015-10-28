@@ -25,7 +25,7 @@ $('#qr-canvas').WebCodeCam({
 
   resultFunction: function(resText, lastImageSrc) {
   // alert(resText);
-  self.creditAccount(resText, '56311d79f2a8a4893bc7b255')
+  self.creditAccount(resText, '5631374f09a123cc3e5d8d4f')
   captureAlert('green')
   },
   getUserMediaError: function() {

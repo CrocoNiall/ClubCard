@@ -1,9 +1,18 @@
 <ion-view view-title="Near Me">
-  <ion-content class='page'>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
+  <ion-content scroll="false" data-tap-disabled="true" class='page' ng-controller="NearController as near">
+
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="near.getActivity()">
+  </ion-refresher>
+
+  <div>
+      <div id="map"></div>
+      <div id="repeat" ng-repeat="marker in near.markers | orderBy : 'title'">
+           <a id="country_container"  href="#" on-touch="near.openInfoWindow($event, marker)">
+           <label id="names" >{{near.marker.title}}</label></a>
+      </div>
+  </div>
+
   </ion-content>
 </ion-view>

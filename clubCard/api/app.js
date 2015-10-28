@@ -22,6 +22,7 @@ var User = require('./models/User.js');
 //   name: 'POWERHOUSE',
 //   openeingHours: {mon: '11pm - 3pm', tues: '11pm - 3pm', wed: 'CLOSED', thurs: '11pm - 3pm', fri: '11pm - 3pm', sat: '11pm - 6pm', sun: '11pm - 3pm'},
 //   offer: {offerDesc: 'BOGOF', cost: 10},
+//   location: { lat: '54.96', long: '1.60' }
 
 // })
 

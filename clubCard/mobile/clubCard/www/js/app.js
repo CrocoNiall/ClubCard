@@ -42,7 +42,7 @@ angular.module('ClubCard', ['ionic', 'ClubCard.controllers', 'starter.services']
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
-  })
+    })
 
   // Each tab has its own nav history stack:
 
@@ -65,22 +65,14 @@ angular.module('ClubCard', ['ionic', 'ClubCard.controllers', 'starter.services']
         }
       }
     })
-    .state('tab.activity-detail', {
-      url: '/activity/:activityId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/activity-detail.html',
-          controller: 'ActivityDetailCtrl'
-        }
-      }
-    })
+
 
   .state('tab.near', {
     url: '/near',
     views: {
       'tab-near': {
         templateUrl: 'templates/tab-near.html',
-        controller: 'NearController'
+        // controller: 'NearController'
       }
     }
   });

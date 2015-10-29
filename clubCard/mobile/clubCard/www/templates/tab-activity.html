@@ -1,6 +1,10 @@
 <ion-view view-title="My Activity" >
   <ion-content class='page' ng-controller='ActivityController as activity'>
 
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="activity.doRefresh()">
+    </ion-refresher>
 
     <div class='card profile' ng-init='activity.getActivity()'>
       <div id='profileLeft'>

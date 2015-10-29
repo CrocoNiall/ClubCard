@@ -34,12 +34,13 @@ angular.module('ClubCard.controllers', [])
 
 })
 
-.controller('ActivityController', function($http) {
+.controller('ActivityController', function($http, $scope) {
   var self = this; 
   self.userActivity = {}
   self.userDetails = {}
   self.user = JSON.parse(localStorage.getItem('CCCUser'))
   getActvity()
+
 
   function getActvity(){
    $http
@@ -47,9 +48,6 @@ angular.module('ClubCard.controllers', [])
     .then(function(response){
       self.userDetails = response.data.user
       self.userActivity = response.data.user.activity
-      // console.log(self.userDetails)
-      // console.log(self.userActivity)
-      // console.log(response)
     });
   }
 
@@ -57,14 +55,16 @@ angular.module('ClubCard.controllers', [])
     return (transaction.action === 'charge') ? 'badge-assertive' : 'badge-calm'
   }
 
-  self.getActvity = function(){
+  this.doRefresh = function(){
+    console.log('refeshing...')
     $http
-    .get('http://ec0f06fc.ngrok.io/users/' + self.user.userId )
-    .then(function(response){
-      self.userDetails = response.data.user
-      self.userActivity = response.data.user.activity
-
-    })
+      .get('http://ec0f06fc.ngrok.io/users/' + self.user.userId )
+      .then(function(response){
+        console.log('results updated!')
+        self.userDetails = response.data.user
+        self.userActivity = response.data.user.activity
+        $scope.$broadcast('scroll.refreshComplete');
+      })
     }
 
 })

@@ -18,6 +18,11 @@ angular.module('ClubCard.controllers', [])
       });
   }
 
+  self.logout = function(){
+    localStorage.clear()
+    $state.go('login')
+  }
+
   self.checkCCCUser = function(){
     console.log('checking user')
     console.log(localStorage.getItem('CCCUser'))
@@ -31,7 +36,7 @@ angular.module('ClubCard.controllers', [])
       console.log('no currentUser')
     }
   }
-});
+})
 
 .controller('ActivityController', function($http, $scope) {
   var self = this; 
@@ -47,7 +52,7 @@ angular.module('ClubCard.controllers', [])
     .then(function(response){
       self.userDetails = response.data.user
       self.userActivity = response.data.user.activity
-    });
+    })
   }
 
   self.getClass = function(transaction){
@@ -65,7 +70,7 @@ angular.module('ClubCard.controllers', [])
         $scope.$broadcast('scroll.refreshComplete');
       })
     }
-});
+})
 
 .controller('NearController', function($http) {
   var self = this;

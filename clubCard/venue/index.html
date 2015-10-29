@@ -3,39 +3,91 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>ClubCard Manager</title>
+  <title>Venue Manager</title>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/captureStyle.css"> 
   <link rel="stylesheet" href="css/main.css"> 
 </head>
 
 <body>
   <div id='outerContainer'>
-    <h1>ClubCard Venue Manager</h1>
+  <div id='navigation'>
+  <img id='logo' src="./images/logoWhite.png">
+    <ul>
+      <li id='buttonDashbaord' class='venueLi' data-page='dashboardOuterContainer'><a>Dashbard</a></li>
+      <li id='buttonCapture' class='venueLi' data-page='captureOuterContainer'><a>Capture</a></li>
+      <li id='buttonConfigure' class='venueLi' data-page='configOuterContainer'><a>Configure</a></li>
+    </ul>
+​   </div>
 
-    <div id='dashboardContainer'>
-      
-    </div>
-
-    <div id='creditNotification'>
-      <button><h1>Claim Offer</h1></button>
-    </div>
-    <div id='captureContainer'>
-        <h1>Capture</h1>
-      <div id='captureIndicator'>
-        <div id='captureSquare' style="position: relative;display: inline-block;">
-            <canvas id="qr-canvas" width="320" height="240"></canvas>  
-            <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
-            <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
-            <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
-            <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
+    <div id='dashboardOuterContainer'>
+      <h2>ClubCard Venue Manager</h2>
+      <p>You are logged in as: <span id='currentVenueName'></span></p>
+      <div id='activity'>
+      <h2>Current Activity:</h2>
+      </div>
+      <div id='mapContainer'>
+        <div id='map'>
         </div>
+      </div>
+
+    </div>
+
+    <div id='configOuterContainer'>
+      <div id='configLeft'>
+        <p>Venue Configuration</p>
+        <select id='venueSelect' class='select-style'>
+          <option>---Select Venue---</option>
+
+        </select>
+      </div>
+      <div id='configRight'>
+      <h1 id='venueName'></h1>
+      <p id='venueId'></p>
+
+      <h3 id='hours'></h3>
+
+        <p id='mon'></p>
+        <p id='tue'></p>
+        <p id='wed'></p>
+        <p id='thurs'></p>
+        <p id='fri'></p>
+        <p id='sat'></p>
+        <p id='sun'></p>
+
       </div>
     </div>
 
+    <div id='captureOuterContainer'>
+      <div id='creditNotification'>
+        <button><h1>Claim Offer</h1></button>
+      </div>
+
+    
+
+      <div id='captureContainer'>
+          <h1>Capture</h1>
+        <div id='captureIndicator'>
+          <div id='captureSquare' style="position: relative;display: inline-block;">
+              <canvas id="qr-canvas" width="320" height="240"></canvas>  
+              <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
+              <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
+              <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
+              <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
+  
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
   <script type="text/javascript" src="js/WebCodeCam-master/js/qrcodelib.js"></script>
   <script type="text/javascript" src="js/WebCodeCam-master/js/WebCodeCam.js"></script>
   <script type='text/javascript' src='js/capture.js'></script>
+  <script type='text/javascript' src='js/app.js'></script>
+  <script async defer
+        src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
 </body>
 </html>

@@ -31,8 +31,7 @@ angular.module('ClubCard.controllers', [])
       console.log('no currentUser')
     }
   }
-
-})
+});
 
 .controller('ActivityController', function($http, $scope) {
   var self = this; 
@@ -66,11 +65,7 @@ angular.module('ClubCard.controllers', [])
         $scope.$broadcast('scroll.refreshComplete');
       })
     }
-
-})
-
-
-
+});
 
 .controller('NearController', function($http) {
   var self = this;
@@ -151,5 +146,4 @@ angular.module('ClubCard.controllers', [])
       e.preventDefault();
       google.maps.event.trigger(selectedMarker, 'click');
   }
-
 });

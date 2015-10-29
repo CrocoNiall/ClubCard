@@ -25,7 +25,10 @@ $('#qr-canvas').WebCodeCam({
 
   resultFunction: function(resText, lastImageSrc) {
   // alert(resText);
-  self.creditAccount(resText, '5631374f09a123cc3e5d8d4f')
+  // '5631f87ef88a34814459dccd'
+  var currentVenueId = localStorage.getItem('CCVMVid')
+  console.log(localStorage.getItem('CCVMVid'))
+  self.creditAccount(resText, currentVenueId)
   captureAlert('green')
   },
   getUserMediaError: function() {

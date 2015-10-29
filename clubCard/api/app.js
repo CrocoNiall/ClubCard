@@ -19,14 +19,27 @@ var Venue = require('./models/Venue.js');
 var User = require('./models/User.js');
 
 // var venue1 = new Venue({
-//   name: 'POWERHOUSE',
+//   name: 'PHUK',
 //   openeingHours: {mon: '11pm - 3pm', tues: '11pm - 3pm', wed: 'CLOSED', thurs: '11pm - 3pm', fri: '11pm - 3pm', sat: '11pm - 6pm', sun: '11pm - 3pm'},
-//   offer: {offerDesc: 'BOGOF', cost: 10},
-//   location: { lat: '54.96', long: '1.60' }
+//   offer: {offerDesc: 'BOGOF', cost: 50},
+//   location: { lat: '54.979996', long: '-1.60' }
 
 // })
 
 // venue1.save(function(err, venue) {
+//   if (err) console.log(err)
+//     console.log('venue1 Saved');
+// })
+
+// var venue2 = new Venue({
+//   name: 'Digital',
+//   openeingHours: {mon: '9pm - 6pm', tues: '11pm - 3pm', wed: 'CLOSED', thurs: 'CLOSED', fri: '11pm - 3pm', sat: '11pm - 6pm', sun: '11pm - 3pm'},
+//   offer: {offerDesc: 'Free Shot', cost: 30},
+//   location: { lat: '54.979996', long: '-1.70' }
+
+// })
+
+// venue2.save(function(err, venue) {
 //   if (err) console.log(err)
 //     console.log('venue1 Saved');
 // })
@@ -47,31 +60,6 @@ var User = require('./models/User.js');
 //   if (err) console.log(err)
 //     console.log('user1 Saved');
 // })
-
-
-
-// var UserScema   = mongoose.Scheme({
-//   email: String,
-//   userName: String, 
-//   password: String, 
-//   firstName: String, 
-//   lastName: String,
-//   DOB: Date, 
-//   activity: [],
-//   credit: Number
-
-// });
-
-// var VenueSchema = mongoose.Schema({
-//   name: String,
-//   openeingHours: {'mon': String, 'tues': String, 'wed': String,'thurs': String, 'fri': String, 'sat': String, 'sun': String},
-//   offer: {'offerDesc': String, 'cost': Number},
-//   location: { 'lat': String, 'long': String },
-//   activity: []
-// })
-
-
-
 
 
 

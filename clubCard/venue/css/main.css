@@ -1,7 +1,44 @@
 body {
   background-color: black;
   color: white;
+  font-family: 'Merriweather Sans', sans-serif;
+  height: 900px;
 }
+
+#map {
+  width: 400px;
+  height: 400px;
+}
+
+#mapContainer{
+  padding-left: 50px;
+  vertical-align: top;
+  width: 450px;
+  height: 400px;
+  display: inline-block;
+}
+
+#activity {
+  display: inline-block;
+  width: 180px;
+  font-size: 10px;
+}
+
+#logo {
+  display: inline-block;
+  width: 200px;
+  margin-top: 20px;
+}
+#navigation {
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#navigation ul {
+  width: 400px;
+}
+
 
 #outerContainer {
   display: block;
@@ -23,3 +60,141 @@ text-align: center;
 #creditNotification{
   display: none;
 }
+
+#captureOuterContainer{
+  display: none;
+}
+
+#dashboardOuterContainer {
+  /*display: none;*/
+  padding: 30px;
+  background-color: white;
+  height: 600px;
+  color: black;
+}
+
+#configOuterContainer {
+  display: none;
+  padding: 30px;
+}
+
+#configLeft {
+  vertical-align: top;
+  display: inline-block;
+  width: 400px;
+}
+
+#configRight{
+  vertical-align: top;
+  display: inline-block;
+  width: 200px;
+}
+
+select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  color: $select-color;
+  width: $select-width;
+  height: $select-height;
+}
+
+/*select*/
+.select-style {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    width: 180px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #fff;
+
+    background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%;
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+
+/*navigation*/
+* {
+   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+      -moz-box-sizing: border-box; /* Firefox, other Gecko */
+           box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+html { 
+  background-color: #383131;
+  color: #F2F2F2;
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+body {
+  margin: 2em auto;
+  width: 80%;
+}
+
+h1, h2, h3, h4, h5, h6{ 
+  font-family: "Lucida Bright", Georgia, serif;
+  color: #d15300; 
+}
+blockquote, iframe, label, p, pre, address, td, th, ul, ol, dl, dd, hr,
+table {
+   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  }
+
+a {
+  color: #d15300; 
+  text-decoration: none;
+}
+
+
+ul { padding: 10px 0 0 30px; width: 100%; float:left; vertical-align: middle; }
+li { position: relative; float: left; background: #d15300; line-height: 24px; padding: 0px 16px; margin-right: 8px; margin-bottom: 10px; list-style: none; }
+a { display: block; text-decoration: none; color: #0a0909; text-transform: capitalize; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3); }
+
+li {
+    -webkit-transform: skew(45deg, 0deg); /* Safari/Chrome, other WebKit */
+       -moz-transform: skew(45deg, 0deg); /* Firefox, other Gecko */
+        -ms-transform: skew(45deg, 0deg); /* IE9 + */
+         -o-transform: skew(45deg, 0deg); /* Opera */
+            transform: skew(45deg, 0deg);
+}
+
+/* This is needed to unskew the <a> element as it's a child of the <li> */
+a { 
+    -webkit-transform: skew(-45deg, 0deg); /* Safari/Chrome, other WebKit */
+       -moz-transform: skew(-45deg, 0deg); /* Firefox, other Gecko */
+        -ms-transform: skew(-45deg, 0deg); /* IE9 + */
+         -o-transform: skew(-45deg, 0deg); /* Opera */
+            transform: skew(-45deg, 0deg);
+}
+
+li:hover { cursor: pointer; background-color: white; }
+li:hover { 
+    -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4); /* Safari/Chrome, other WebKit */
+       -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4); /* Firefox, other Gecko */
+            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+li { border-right: 4px solid black; }
+li {
+    -webkit-border-radius: 4px; /* Safari/Chrome, other WebKit */
+       -moz-border-radius: 4px; /* Firefox, other Gecko */
+            border-radius: 4px;
+}
+​

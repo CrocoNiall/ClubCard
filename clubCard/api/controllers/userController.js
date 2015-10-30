@@ -13,7 +13,7 @@ function getAll(request, response) {
 // POST CREATE USER
 function createUser(request, response) {
   console.log('in POST');
-  console.log('body:',request.body);
+  console.log('body:', request.body);
 
   var user = new User(request.body);
   user.save(function(error) {

@@ -3,7 +3,7 @@ angular.module('ClubCard.controllers', [])
 .controller('HomeController', function($state ,$http) {
   var self = this
 
-  self.username = ''
+
   self.currentUser = {}
 
   self.login = function(){
@@ -15,12 +15,15 @@ angular.module('ClubCard.controllers', [])
         self.currentUser.userId = response.data.user[0]._id
         localStorage.setItem('CCCUser', JSON.stringify(self.currentUser))
         $state.go('tab.home');
+      
       });
   }
 
   self.logout = function(){
+
     localStorage.clear()
     $state.go('login')
+
   }
 
   self.checkCCCUser = function(){
@@ -51,7 +54,7 @@ angular.module('ClubCard.controllers', [])
     .get('http://ec0f06fc.ngrok.io/users/' + self.user.userId )
     .then(function(response){
       self.userDetails = response.data.user
-      self.userActivity = response.data.user.activity
+      self.userActivity = response.data.user.activity.reverse()
     })
   }
 
@@ -66,7 +69,7 @@ angular.module('ClubCard.controllers', [])
       .then(function(response){
         console.log('results updated!')
         self.userDetails = response.data.user
-        self.userActivity = response.data.user.activity
+        self.userActivity = response.data.user.activity.reverse()
         $scope.$broadcast('scroll.refreshComplete');
       })
     }
@@ -87,17 +90,14 @@ angular.module('ClubCard.controllers', [])
   });
 
   var mapOptions = {
-      zoom: 4,
-      center: new google.maps.LatLng(25,80),
+      zoom: 14,
+      center: new google.maps.LatLng(54.979947, -1.617620),
       mapTypeId: google.maps.MapTypeId.TERRAIN
   }
 
   self.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
   self.markers = [];
-  
   var infoWindow = new google.maps.InfoWindow();
-  
   var createMarker = function (info){
       
       var marker = new google.maps.Marker({
@@ -107,7 +107,7 @@ angular.module('ClubCard.controllers', [])
           offer: info.offer,
           hours: info.hours
       });
-      console.log(marker)
+
       marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
       
       google.maps.event.addListener(marker, 'click', function(){

@@ -59,6 +59,7 @@ text-align: center;
 }
 #creditNotification{
   display: none;
+  text-align: center;
 }
 
 #captureOuterContainer{
@@ -88,6 +89,12 @@ text-align: center;
   vertical-align: top;
   display: inline-block;
   width: 200px;
+}
+
+button {
+  width: 70%;
+  margin: 0 auto;
+
 }
 
 select {

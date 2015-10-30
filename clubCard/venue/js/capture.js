@@ -3,38 +3,41 @@ var offerButton = $('#creditNotification')
 var captureIndicator = $('#captureIndicator')
 
 $('#qr-canvas').WebCodeCam({
-  ReadQRCode: true, // false or true
-  ReadBarecode: true, // false or true
+  ReadQRCode: true, 
+  ReadBarecode: true, 
   width: 600,
   height: 450,
   videoSource: {  
-          id: true,      //default Videosource
-          maxWidth: 800, //max Videosource resolution width
-          maxHeight: 650 //max Videosource resolution height
+          id: true,  
+          maxWidth: 800, 
+          maxHeight: 650 
   },
-  flipVertical: false,  // false or true
-  flipHorizontal: false,  // false or true
-  zoom: -1, // if zoom = -1, auto zoom for optimal resolution else int
-  beep: "js/beep.mp3", // string, audio file location
-  autoBrightnessValue: false, // functional when value autoBrightnessValue is int
-  brightness: 0, // int 
-  grayScale: true, // false or true
-  contrast: 0, // int 
-  threshold: 0, // int 
-  sharpness: [], //or matrix, example for sharpness ->  [0, -1, 0, -1, 5, -1, 0, -1, 0]
+  flipVertical: false,  
+  flipHorizontal: false, 
+  zoom: -1, 
+  beep: "js/beep.mp3", 
+  autoBrightnessValue: false, 
+  brightness: 0, 
+  grayScale: true, 
+  contrast: 0, 
+  threshold: 0, 
+  sharpness: [], 
 
   resultFunction: function(resText, lastImageSrc) {
-  // alert(resText);
-  // '5631f87ef88a34814459dccd'
+
+    //GOOD SCAN - GET CURRENT USER FROM LOCAL STORAGE
+    //          - CREDIT ACCOUNT
+    //          - CAPTURE ALERT(GREEN)
   var currentVenueId = localStorage.getItem('CCVMVid')
-  console.log(localStorage.getItem('CCVMVid'))
-  self.creditAccount(resText, currentVenueId)
+  creditAccount(resText, currentVenueId)
   captureAlert('green')
+
   },
   getUserMediaError: function() {
 
   },
   cameraError: function(error) {
+    //BAD SCAN - CAPTURE ALERT(RED)
   captureAlert('red')
   }
 });
@@ -58,12 +61,12 @@ function lookupBalance(userId, venueId){
     url: "http://localhost:3000/query_credit/venues/" + venueId + "/users/" + userId,
   })
   .done(function( response ) {
-    // console.log(response.sufficiantCredit)
+
     if (response.sufficiantCredit === true) { 
         console.log('user has enought points')
         offerButton.slideDown()
         offerButton.on('click', function(){
-            self.claimOffer(userId, venueId, response.points)
+          self.claimOffer(userId, venueId, response.points)
         })
     }
   });
